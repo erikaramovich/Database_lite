@@ -3,8 +3,8 @@ from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
 
 # Configuration
-DB_NAME = 'Archeology' # Replace with your desired database name
-DB_OWNER = 'Galstyan_Erik' # Replace with the owner of the database
+DB_NAME = 'Archeology' 
+DB_OWNER = 'Galstyan_Erik' 
 DB_URI = f'postgresql:///{DB_NAME}'
 
 # Create engine (Note: this assumes you have a PostgreSQL service running and accessible)
@@ -21,6 +21,3 @@ else:
 with engine.connect() as conn:
     conn.execute(f'ALTER DATABASE {DB_NAME} OWNER TO {DB_OWNER}')
     print(f'Owner of database {DB_NAME} set to {DB_OWNER}.')
-
-# Alembic setup is usually done via command-line tools and configuration files
-# and is not included in this script.
